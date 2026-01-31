@@ -9,8 +9,20 @@ import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://cash-tube-two.vercel.app/",
+    "http://localhost:5173"
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.status(200).send("API is running 🚀");
+});
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/video", videoRoutes);
