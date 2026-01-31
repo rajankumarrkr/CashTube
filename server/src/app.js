@@ -8,7 +8,9 @@ import adminVideoRoutes from "./routes/adminVideoRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
-// ... (omitted)
+
+app.use(cors());
+app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/video", videoRoutes);
