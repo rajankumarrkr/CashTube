@@ -13,10 +13,12 @@ import Register from "./pages/auth/Register";
 import Home from "./pages/user/Home";
 import AdminLogin from "./pages/admin/AdminLogin.jsx";
 import AdminDashboard from "./pages/admin/Dashboard";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <AuthProvider>
+      <Toaster position="top-center" reverseOrder={false} />
       <BrowserRouter>
         <Routes>
           <Route

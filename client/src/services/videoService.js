@@ -2,4 +2,4 @@ import api from "./api";
 
 export const getTodayVideo = () => api.get("/video/today");
 
-export const claimReward = () => api.post("/video/claim");
+export const claimReward = (videoId) => api.post("/video/claim", { videoId });

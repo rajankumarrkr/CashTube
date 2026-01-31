@@ -38,6 +38,24 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+
+    upiId: {
+      type: String,
+      default: "",
+    },
+
+    completedTasks: [
+      {
+        videoId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Video",
+        },
+        completedAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
